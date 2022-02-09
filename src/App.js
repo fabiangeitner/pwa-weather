@@ -28,13 +28,11 @@ const App = () => {
           onKeyPress={search}
         />
         {weather.main && (
-          <>
-            <div className="city">
-              <h2 className="city-name">
-                <span>{weather.name}</span>
-                <sub>{weather.sys.country}</sub>
-              </h2>
-            </div>
+          <div className="city">
+            <h2 className="city-name">
+              <span>{weather.name}</span>
+              <sub>{weather.sys.country}</sub>
+            </h2>
             <div className="city-temp">
               {Math.round(weather.main.temp)}
               <sup>&deg;C</sup>
@@ -47,7 +45,7 @@ const App = () => {
               />
               <p>{weather.weather[0].description}</p>
             </div>
-          </>
+          </div>
         )}
       </div>
     </>
