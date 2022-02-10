@@ -1,8 +1,24 @@
 import React, { useState } from "react";
 import "./App.css";
+import Wrapper from "./assets/bg.jpg";
 
 //Import API
 import { fetchWeather } from "./api/fetchWeather";
+//Import Style
+import styled from "styled-components";
+
+const MainContainer = styled.div`
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.418)),
+    url(${Wrapper});
+  background-size: cover;
+  background-position: center;
+
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`;
 
 const App = () => {
   const [query, setQuery] = useState("");
@@ -18,7 +34,7 @@ const App = () => {
 
   return (
     <>
-      <div className="main-container">
+      <MainContainer>
         <input
           type="text"
           className="search"
@@ -47,7 +63,7 @@ const App = () => {
             </div>
           </div>
         )}
-      </div>
+      </MainContainer>
     </>
   );
 };
