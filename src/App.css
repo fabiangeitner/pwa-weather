@@ -1,16 +1,16 @@
 html,
 body,
 #root {
-  font: 0.9rem sans-serif;
-  background: #0a1f44;
-  color: #1e2432;
+  background: linear-gradient(#140d91, #0f73e8);
+  font-family: "Quicksand", sans-serif;
+  color: #000;
   height: 100%;
   margin: 0;
 }
 
 .search {
   outline: none;
-  padding: 20px 7%;
+  padding: 15px 8%;
   border-radius: 20px;
   border: none;
   margin-bottom: 5%;
@@ -35,10 +35,10 @@ p {
 }
 
 .city-temp {
-  font-size: 5rem;
+  font-size: 6rem;
   font-weight: bold;
   margin-top: 10px;
-  color: #1e2432;
+  color: #000;
   text-align: center;
 }
 
@@ -50,18 +50,18 @@ p {
   font-size: 2em;
 }
 
-.city-name sup {
+.country {
   padding: 0.2em 0.6em;
   margin-left: 0.2em;
   border-radius: 30px;
-  color: #fff;
-  background: #ff8c00;
+  color: #140d91;
+  border: 3px solid #140d91;
 }
 
 .city-icon {
   margin-top: 10px;
-  width: 100px;
-  height: 100px;
+  width: 140px;
+  height: 140px;
 }
 
 .info {

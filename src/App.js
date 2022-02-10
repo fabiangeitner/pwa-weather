@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./App.css";
-import Wrapper from "./assets/bg.jpg";
 
 //Import API
 import { fetchWeather } from "./api/fetchWeather";
@@ -8,11 +7,6 @@ import { fetchWeather } from "./api/fetchWeather";
 import styled from "styled-components";
 
 const MainContainer = styled.div`
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.418)),
-    url(${Wrapper});
-  background-size: cover;
-  background-position: center;
-
   height: 100%;
   display: flex;
   justify-content: center;
@@ -38,7 +32,7 @@ const App = () => {
         <input
           type="text"
           className="search"
-          placeholder="Search..."
+          placeholder="Suche deine Stadt..."
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           onKeyPress={search}
@@ -47,12 +41,8 @@ const App = () => {
           <div className="city">
             <h2 className="city-name">
               <span>{weather.name}</span>
-              <sub>{weather.sys.country}</sub>
+              <sub className="country">{weather.sys.country}</sub>
             </h2>
-            <div className="city-temp">
-              {Math.round(weather.main.temp)}
-              <sup>&deg;C</sup>
-            </div>
             <div className="info">
               <img
                 className="city-icon"
@@ -60,6 +50,10 @@ const App = () => {
                 alt={weather.weather[0].description}
               />
               <p>{weather.weather[0].description}</p>
+            </div>
+            <div className="city-temp">
+              {Math.round(weather.main.temp)}
+              <sup>&deg;C</sup>
             </div>
           </div>
         )}
